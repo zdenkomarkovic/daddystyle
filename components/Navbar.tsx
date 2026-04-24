@@ -43,10 +43,7 @@ export default function Navbar() {
             className="object-contain"
           />
           <span className="hidden sm:block font-serif text-xl font-bold gold-text tracking-wide leading-none">
-            Daddy Style
-            <span className="block text-base font-sans font-normal text-[#c9a227]/90 tracking-[0.2em] uppercase mt-0.5">
-              Decor 021
-            </span>
+            Daddy Style Decor 021
           </span>
         </Link>
 

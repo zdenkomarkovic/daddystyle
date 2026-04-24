@@ -6,7 +6,8 @@
       "Bash(npm:*)",
       "Bash(node -e \"try{require\\('sharp'\\);console.log\\('sharp ok'\\)}catch\\(e\\){console.log\\('no sharp'\\)}\")",
       "Bash(cwebp -version)",
-      "Bash(node -e ':*)"
+      "Bash(node -e ':*)",
+      "Bash(node -e ' *)"
     ]
   }
 }

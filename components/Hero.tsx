@@ -4,18 +4,30 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center md:justify-start overflow-hidden"
     >
-      {/* Background image + overlay */}
+      {/* Background image — full bleed for mobile, hidden behind desktop panels */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/1000082401.webp')" }}
+        style={{ backgroundImage: "url('/hero.jpg')" }}
       />
       {/* Multi-layer dark overlay for readability + gold tint */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/80 via-[#0a0a0a]/60 to-[#0a0a0a]/75" />
-      {/* <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/70 via-transparent to-[#0a0a0a]/70" /> */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/30 via-[#0a0a0a]/10 to-[#0a0a0a]/30" />
       {/* Subtle gold vignette */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(201,162,39,0.06)_0%,transparent_70%)]" />
+
+      {/* Desktop split: dark left panel */}
+      <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1/2 bg-[#0d0d0d]" />
+
+      {/* Desktop split: right image panel */}
+      <div className="hidden md:block absolute right-0 top-0 bottom-0 w-1/2">
+        <img
+          src="/hero.jpg"
+          alt="Daddy Style Decor radovi"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-[#0a0a0a]/10" />
+      </div>
 
       {/* Decorative corner elements */}
       <div className="absolute top-8 left-8 w-16 h-16 border-t border-l border-[#c9a227]/40 hidden md:block" />
@@ -24,39 +36,36 @@ export default function Hero() {
       <div className="absolute bottom-16 right-8 w-16 h-16 border-b border-r border-[#c9a227]/40 hidden md:block" />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto md:text-left md:w-1/2 md:max-w-none md:pl-16 lg:pl-24 xl:pl-32 md:pr-8 md:mx-0">
         {/* Eyebrow */}
-        <p className="text-base font-sans tracking-[0.4em] uppercase text-[#c9a227] mb-6 opacity-90">
+        <p className="text-base font-sans tracking-[0.4em] uppercase text-[#ebe6dd] mb-1">
           Novi Sad · 25 Godina iskustva
         </p>
 
         {/* Main title */}
-        <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4 leading-tight">
-          <span className="gold-shimmer">Daddy Style</span>
-          <br />
-          <span className="text-[#e8dcc8] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-widest">
-            Decor 021
-          </span>
+        <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-5 leading-none">
+          <span className="gold-shimmer whitespace-nowrap">Daddy Style</span>
+          <span className="gold-shimmer whitespace-nowrap block md:inline"> Decor 021</span>
         </h1>
 
         {/* Divider */}
-        <div className="flex items-center justify-center gap-4 my-8">
+        <div className="flex items-center justify-center gap-4 my-4 md:justify-start">
           <div className="h-px w-16 bg-gradient-to-r from-transparent to-[#c9a227]" />
           <div className="w-2 h-2 rotate-45 bg-[#c9a227]" />
           <div className="h-px w-16 bg-gradient-to-l from-transparent to-[#c9a227]" />
         </div>
 
         {/* Tagline */}
-        <p className="font-serif text-xl sm:text-2xl md:text-3xl text-[#e8dcc8]/90 mb-4 italic">
-          Farbamo sve što ima površinu.
+        <p className="font-serif text-xl sm:text-2xl md:text-3xl text-[#ebe6dd] mb-2 italic">
+          Profesionalno farbanje i ukrasavanje svih drvenih povrsina
         </p>
-        <p className="font-sans text-[#e8dcc8]/90 text-base sm:text-base max-w-xl mx-auto leading-relaxed mb-10">
+        <p className="font-sans text-[#f3f0ec]/90 text-base sm:text-base max-w-xl mx-auto leading-relaxed mb-0 md:mx-0">
           Stolarija, nameštaj, kuhinje, komode, prozori, zvučnici — sve od nas dobija novi sjaj.
           Materijal i prevoz u ceni.
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mt-6">
           <a
             href={`tel:${CONTACT_PHONE}`}
             className="btn-gold px-8 py-4 text-base font-sans rounded-sm uppercase tracking-widest inline-block"
@@ -72,7 +81,7 @@ export default function Hero() {
         </div>
 
         {/* Instagram link */}
-        <div className="mt-8">
+        <div className="mt-4">
           <a
             href={CONTACT_INSTAGRAM}
             target="_blank"
@@ -88,7 +97,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce md:left-1/4">
         <span className="text-base font-sans tracking-[0.3em] uppercase text-[#c9a227]/80">
           Scroll
         </span>
